@@ -4,67 +4,142 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FNU Vishakha | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 48px auto; padding: 0 16px; line-height: 1.6; color: #101828; }
-    h1 { margin-bottom: 4px; }
-    h2 { margin-top: 40px; border-bottom: 1px solid #D5DBE5; padding-bottom: 6px; }
-    .sub { color: #475467; margin-top: 0; }
-    .meta { color: #475467; font-size: 0.9em; margin: 0; }
-    a { color: #2447B8; }
-    li { margin-bottom: 14px; }
-    .video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 16px 0; }
+    :root {
+      --bg: #F5F7FA;
+      --card: #FFFFFF;
+      --ink: #101828;
+      --muted: #475467;
+      --line: #D5DBE5;
+      --accent: #2447B8;
+      --accent-soft: #DCE6FB;
+      --dark: #101828;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; font-size: 17px; line-height: 1.65; }
+    a { color: var(--accent); font-weight: 500; }
+    a:hover { color: #16307F; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+    header { background: var(--dark); color: #F5F7FA; padding: 72px 0 64px; }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #9DB4F0; margin: 0 0 16px; }
+    h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(40px, 8vw, 68px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 16px; }
+    header p.lead { font-size: 19px; color: #C9D1DE; max-width: 600px; margin: 0 0 28px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; padding: 12px 22px; border-radius: 6px; text-decoration: none; font-weight: 500; }
+    .btn.primary { background: #FFFFFF; color: var(--dark); }
+    .btn.primary:hover { background: var(--accent-soft); color: var(--dark); }
+    .btn.ghost { border: 1px solid #667085; color: #F5F7FA; }
+    .btn.ghost:hover { background: #1D2939; color: #FFFFFF; }
+
+    section { padding: 56px 0 8px; }
+    h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.01em; margin: 0 0 24px; }
+    h2 span { display: block; font-family: 'JetBrains Mono', monospace; font-weight: 400; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 22px; line-height: 1.3; margin: 8px 0 6px; }
+    .card p { margin: 0 0 10px; }
+    .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; background: var(--accent-soft); color: #16307F; }
+    .tag.grey { background: #E8EAEE; color: #344054; }
+    .meta { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted); }
+
+    .grid { display: flex; flex-wrap: wrap; gap: 16px; }
+    .grid .card { flex: 1 1 240px; margin: 0; }
+    .repo { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 15px; margin: 0 0 12px; }
+
+    .video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 16px 0 12px; border-radius: 8px; overflow: hidden; background: #000; }
     .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    footer { margin-top: 64px; padding: 28px 0; background: var(--dark); color: #98A2B3; font-size: 14px; text-align: center; }
+    footer a { color: #C9D1DE; }
   </style>
 </head>
 <body>
-  <h1>FNU Vishakha</h1>
-  <p class="sub">MBA candidate, Business Analytics, Cal State Fullerton</p>
-  <p>I build machine learning models that explain business outcomes, with a focus on applied machine learning and data mining.</p>
-  <p>
-    <a href="https://github.com/fnuVishakha">GitHub</a> ·
-    <a href="https://www.linkedin.com/in/fnuVishakha">LinkedIn</a>
-  </p>
 
-  <h2>Research</h2>
-  <ul>
-    <li>
-      <strong>Customer churn prediction with machine learning</strong>
-      <p class="meta">Accepted, IARIA DATA ANALYTICS 2026</p>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6819479">Preprint on SSRN</a> ·
-      <a href="https://github.com/fnuVishakha/customer-churn-prediction-ml">Code</a>
-    </li>
-    <li>
-      <strong>Employee attrition prediction with machine learning</strong>
-      <p class="meta">Submitted, ICBDAA 2026</p>
-      <a href="https://github.com/fnuVishakha/employee-attrition-prediction-ml">Code</a>
-    </li>
-  </ul>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">MBA candidate, Business Analytics · Cal State Fullerton</p>
+      <h1>FNU Vishakha</h1>
+      <p class="lead">I build machine learning models that explain business outcomes, with a focus on applied machine learning and data mining.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://github.com/fnuVishakha">GitHub</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/fnuVishakha">LinkedIn</a>
+      </div>
+    </div>
+  </header>
 
-  <h2>Senior Project: Linguasign</h2>
-  <p class="meta">Computer Engineering senior project, 2025 · Presented with my team at the ECE Expo, 2025</p>
-  <p>Linguasign is a pair of smart glasses that detects sign language in real life. Our team created the datasets ourselves. I worked on both the hardware and the software.</p>
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/NDVP4xuJh-Y" title="Linguasign senior project video" allowfullscreen></iframe>
-  </div>
-  <p><a href="https://www.youtube.com/watch?v=NDVP4xuJh-Y">Watch on YouTube</a></p>
+  <main class="wrap">
 
-  <h2>Projects</h2>
-  <ul>
-    <li><a href="https://github.com/fnuVishakha/riskSight-ai">riskSight-ai</a></li>
-    <li><a href="https://github.com/fnuVishakha/AIVideoSummarizer">AIVideoSummarizer</a></li>
-    <li><a href="https://github.com/fnuVishakha/storyweaver-ai">storyweaver-ai</a></li>
-  </ul>
+    <section>
+      <h2><span>Research</span>Machine learning papers</h2>
+      <div class="card">
+        <span class="tag">Accepted</span>
+        <h3>Customer churn prediction with machine learning</h3>
+        <p class="meta">IARIA DATA ANALYTICS 2026</p>
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6819479">Preprint on SSRN</a> ·
+        <a href="https://github.com/fnuVishakha/customer-churn-prediction-ml">Code</a>
+      </div>
+      <div class="card">
+        <span class="tag grey">Submitted</span>
+        <h3>Employee attrition prediction with machine learning</h3>
+        <p class="meta">ICBDAA 2026</p>
+        <a href="https://github.com/fnuVishakha/employee-attrition-prediction-ml">Code</a>
+      </div>
+    </section>
 
-  <h2>Education</h2>
-  <ul>
-    <li>
-      <strong>MBA, Business Analytics</strong>
-      <p class="meta">California State University, Fullerton · Expected May 2027</p>
-    </li>
-    <li>
-      <strong>BS, Computer Engineering</strong>
-      <p class="meta">California State University, Fullerton · May 2025</p>
-    </li>
-  </ul>
+    <section>
+      <h2><span>Senior project</span>Linguasign</h2>
+      <div class="card">
+        <p class="meta">Computer Engineering senior project, 2025 · Presented with my team at the ECE Expo, 2025</p>
+        <p>Linguasign is a pair of smart glasses that detects sign language in real life. Our team created the datasets ourselves. I worked on both the hardware and the software.</p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/NDVP4xuJh-Y" title="Linguasign senior project video" allowfullscreen></iframe>
+        </div>
+        <a href="https://www.youtube.com/watch?v=NDVP4xuJh-Y">Watch on YouTube</a>
+      </div>
+    </section>
+
+    <section>
+      <h2><span>Projects</span>Open source on GitHub</h2>
+      <div class="grid">
+        <div class="card">
+          <p class="repo">riskSight-ai</p>
+          <a href="https://github.com/fnuVishakha/riskSight-ai">View repository</a>
+        </div>
+        <div class="card">
+          <p class="repo">AIVideoSummarizer</p>
+          <a href="https://github.com/fnuVishakha/AIVideoSummarizer">View repository</a>
+        </div>
+        <div class="card">
+          <p class="repo">storyweaver-ai</p>
+          <a href="https://github.com/fnuVishakha/storyweaver-ai">View repository</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span>Education</span>Cal State Fullerton</h2>
+      <div class="card">
+        <h3>MBA, Business Analytics</h3>
+        <p class="meta">California State University, Fullerton · Expected May 2027</p>
+      </div>
+      <div class="card">
+        <h3>BS, Computer Engineering</h3>
+        <p class="meta">California State University, Fullerton · May 2025</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="https://github.com/fnuVishakha">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/fnuVishakha">LinkedIn</a>
+    </div>
+  </footer>
+
 </body>
 </html>
